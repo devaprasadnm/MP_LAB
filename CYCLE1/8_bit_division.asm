@@ -1,0 +1,14 @@
+  LXI H, 4150h
+  MOV B, M 
+  MVI C, 00h
+  INX H
+  MOV A, M 
+  NEXT: CMP B 
+  JC LOOP 
+  SUB B 
+  INR C 
+  JMP NEXT 
+  LOOP: STA 4152h
+  MOV A, C
+  STA 4153h
+  HLT

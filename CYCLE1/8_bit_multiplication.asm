@@ -1,0 +1,15 @@
+  MVI D, 00h 
+  MVI A, 00h
+  LXI H, 4150h
+  MOV B, M
+  INX H
+  MOV C, M
+  LOOP: ADD B 
+  JNC NEXT 
+  INR D 
+  NEXT: DCR C
+  JNZ LOOP 
+  STA 4152h 
+  HLT
+
+
